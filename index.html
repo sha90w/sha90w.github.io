@@ -25,15 +25,15 @@
 		function handleSubmit(event) {
       		event.preventDefault();
       		const url = document.getElementById('inputString').value;
-      		fetchAndDisplay('https://mytodo.api.golem.cloud/count', 'result');
+      		fetchAndDisplay('https://mytodo.api.golem.cloud/count?url=${url}', 'result');
     	}
     </script>
 </head>
 <body>
-    <h2>URL</h2>
+    <h2>Shorten URL using GOLEM</h2>
     <div id="result">
         <form onsubmit="handleSubmit(event)">
-            <label for="inputString">Enter a string:</label><br>
+            <label for="inputString">URL:</label><br>
             <input type="text" id="inputString" name="inputString"><br><br>
         </form>
     </div>
