@@ -24,7 +24,7 @@
 		
 		function handleSubmit(event) {
       		event.preventDefault();
-      		const url = document.getElementById('inputString').value;
+      		var url = document.getElementById('inputString').value;
       		fetchAndDisplay(`https://mytodo.api.golem.cloud/count?url=${url}`, 'result');
     	}
     </script>
