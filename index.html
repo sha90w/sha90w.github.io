@@ -16,7 +16,7 @@
 			  // Displaying response on the page
               var data_str = JSON.parse(data).toString();
               var link = document.createElement("a");
-              var redir_url = `https://s.api.golem.cloud/go/${data_str}`;
+              var redir_url = `https://s.api.golem.cloud/${data_str}`;
               link.href = redir_url;
               link.textContent = redir_url;
 			  document.getElementById(elementId).appendChild(link);
