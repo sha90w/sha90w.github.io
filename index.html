@@ -14,7 +14,7 @@
 			})
 			.then(data => {
 			  // Displaying response on the page
-			  document.getElementById(elementId).innerText = data;
+			  document.getElementById(elementId).innerText = `<p href="https://s.api.golem.cloud/go/${data}">`;
 			})
 			.catch(error => {
 			  console.error('There was a problem with the fetch operation:', error);
