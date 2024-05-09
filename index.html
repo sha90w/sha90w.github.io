@@ -4,9 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shorten URL with GOLEM!</title>
     <script>
-		function fetchAndDisplay(url, elementId) {
-		  // Sending GET request using fetch API
-		  fetch(url)
+		function fetchAndDisplay(url, data, elementId) {
+          var requestOptions = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+          };
+		  fetch(url, requestOptions)
 			.then(response => {
 			  if (!response.ok) {
 				throw new Error('Network response was not ok');
@@ -25,7 +31,7 @@
 		function handleSubmit(event) {
       		event.preventDefault();
       		var url = document.getElementById('inputString').value;
-      		fetchAndDisplay(`https://mytodo.api.golem.cloud/count?url=${url}`, 'result');
+      		fetchAndDisplay('https://s.api.golem.cloud/url', url, 'result');
     	}
     </script>
 </head>
