@@ -24,7 +24,8 @@
 		function handleSubmit(event) {
       		event.preventDefault();
       		var url = document.getElementById('inputString').value;
-      		fetchAndDisplay(`https://s.api.golem.cloud/url/${url}`, 'result');
+            var enc_url = encodeURIComponent(url);
+      		fetchAndDisplay(`https://s.api.golem.cloud/url/${enc_url}`, 'result');
     	}
     </script>
 </head>
