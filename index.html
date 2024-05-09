@@ -14,7 +14,11 @@
 			})
 			.then(data => {
 			  // Displaying response on the page
-			  document.getElementById(elementId).innerText = `<p href="https://s.api.golem.cloud/go/${data}">`;
+              var link = document.createElement("a");
+              var redir_url = `href="https://s.api.golem.cloud/go/${data}`;
+              link.href = redir_url;
+              link.textContent = redir_url;
+			  document.getElementById(elementId).appendChild(link);
 			})
 			.catch(error => {
 			  console.error('There was a problem with the fetch operation:', error);
